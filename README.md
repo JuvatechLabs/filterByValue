@@ -38,7 +38,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Install
 
-    $ git clone 
+    $ git clone https://github.com/JuvatechLabs/filterByValue.git
     $ cd upload-txt
     $ npm install
 
@@ -46,16 +46,23 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Running the project
 
-    $ npm start
+    $ npm init  
+    
+   To download all the required packages
+   
+   $ node index.js
 
 ## TroubleShooting steps applicable for first timers
 Before starting the run
-1. Navigate to /app/config/env.js and change the database login credentials in accordance with the one setup on your local computer.
-2. Navigate to server.js in the root folder of the downloaded upload-txt, 
-    upload.uploadFile("uploads/mock.txt");
-    this line has a hardcoded location of the file we want to upload, feel free to change the file path/name to test multiple files. 
-3. To run the code, enter   'npm start'
-4. You might get an error while running for the first time stating that the xyz package is not loaded or available, in that case run 'npm install' and then step 3. 
+1. Navigate to /app/config/env.js and change the database login credentials in accordance with the one setup on your local computer. 
+2. To run the code, enter   'node index.js'
+3. If you get an error that the xyz package is not loaded or available, in that case run
+
+   $ npm i package-name --save
+
+
+
+and then step 2. 
 
 
 
