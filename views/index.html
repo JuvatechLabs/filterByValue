@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Query</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" >
+
+	$(document).ready(function() {
+		
+		$("#filterBySex").submit(function(evt) {
+			evt.preventDefault();
+			
+			let formData = $('form').serializeArray();
+			formData = formData[0].value;
+			
+			$.ajax({
+				url : '/getTransactionsBySex/:Sex',
+				type : 'GET',
+				data: formData,
+				contentType : "application/json; charset=utf-8",
+			
+				success : function(response) {
+				
+					document.getElementById('table').innerHTML="";
+				var tr;
+				var columns = ['id','ExpNum','ContrCode','AnimalID','Strain','AgeDays','Sex','Treatment','SegDateTime','RunSecs','ContSecs','ncaps','totDist','speed','tStat','file_name']; 
+				tr = $('<tr/>');
+				for(var k in columns){
+					tr.append("<th>" + columns[k]+ "</th>");
+				}
+				$('table').append(tr);
+					for (var i = 0; i < response.length; i++) {
+            			tr = $('<tr/>');
+            			tr.append("<td>" + response[i].id + "</td>");
+            			tr.append("<td>" + response[i].ExpNum + "</td>");
+						tr.append("<td>" + response[i].ContrCode + "</td>");
+						tr.append("<td>" + response[i].AnimalID + "</td>");
+            			tr.append("<td>" + response[i].Strain + "</td>");
+						tr.append("<td>" + response[i].AgeDays + "</td>");
+						tr.append("<td>" + response[i].Sex + "</td>");
+            			tr.append("<td>" + response[i].Treatment + "</td>");
+						tr.append("<td>" + response[i].SegDateTime + "</td>");
+						tr.append("<td>" + response[i].RunSecs + "</td>");
+            			tr.append("<td>" + response[i].ContSecs + "</td>");
+						tr.append("<td>" + response[i].nCaps + "</td>");
+						tr.append("<td>" + response[i].totDist + "</td>");
+            			tr.append("<td>" + response[i].speed + "</td>");
+						tr.append("<td>" + response[i].tStat + "</td>");
+						tr.append("<td>" + response[i].file_name + "</td>");
+            			$('table').append(tr);
+        			}	
+				},
+				error: function(e){
+					alert("Fail! " + e);
+				}
+			});
+			
+			return false;
+		});
+		
+	})</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+				<h3>Filter</h3>
+				<form id="filterBySex">
+					<div class="form-group">
+						<label class="control-label" for="filterBySex">Choose Sex </label>
+						
+                        <select id="Sex" name="Sex">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                    </select>
+					</div>
+					<button type="submit" class="btn btn-danger" id="btnFilterBySex">Filter</button>
+				</form>
+				
+				</div>
+			</div>
+		</div>
+		<div class="table"><table id="table" border="1"> </table></div>
+		
+		
+	</div>
+</body>
+</html>
