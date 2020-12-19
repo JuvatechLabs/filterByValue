@@ -1,1 +1,61 @@
 # filterByValue
+Fetches data from postgres and filters animals by Sex
+
+---
+## Requirements
+
+For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+
+### Node
+- #### Node installation on Windows
+
+  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
+Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
+
+- #### Node installation on Ubuntu
+
+  You can install nodejs and npm easily with apt install, just run the following commands.
+
+      $ sudo apt install nodejs
+      $ sudo apt install npm
+
+- #### Other Operating Systems
+  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
+
+If the installation was successful, you should be able to run the following command.
+
+    $ node --version
+    v8.11.3
+
+    $ npm --version
+    6.1.0
+
+If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
+
+    $ npm install npm -g
+
+---
+
+## Install
+
+    $ git clone 
+    $ cd upload-txt
+    $ npm install
+
+
+
+## Running the project
+
+    $ npm start
+
+## TroubleShooting steps applicable for first timers
+Before starting the run
+1. Navigate to /app/config/env.js and change the database login credentials in accordance with the one setup on your local computer.
+2. Navigate to server.js in the root folder of the downloaded upload-txt, 
+    upload.uploadFile("uploads/mock.txt");
+    this line has a hardcoded location of the file we want to upload, feel free to change the file path/name to test multiple files. 
+3. To run the code, enter   'npm start'
+4. You might get an error while running for the first time stating that the xyz package is not loaded or available, in that case run 'npm install' and then step 3. 
+
+
+
