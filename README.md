@@ -64,5 +64,5 @@ Before starting the run
 
 and then step 2. 
 
-
+4. Navigate to localhost:3030/
 
