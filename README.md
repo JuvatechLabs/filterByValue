@@ -43,14 +43,12 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ npm install
 
 
+   
 
 ## Running the project
-
-    $ npm init  
-    
-   To download all the required packages
-   
+  
    $ node index.js
+ 
 
 ## TroubleShooting steps applicable for first timers
 Before starting the run
