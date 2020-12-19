@@ -43,12 +43,14 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ npm install
 
 
+## To Install packages 
+
+     $ npm init
    
 
-## Running the project
+## Start the project
   
-   $ node index.js
- 
+     $ node index.js
 
 ## TroubleShooting steps applicable for first timers
 Before starting the run
@@ -56,8 +58,8 @@ Before starting the run
 2. To run the code, enter   'node index.js'
 3. If you get an error that the xyz package is not loaded or available, in that case run
 
-   $ npm i package-name --save
-
+      
+      $ node index.js
 
 
 and then step 2. 
